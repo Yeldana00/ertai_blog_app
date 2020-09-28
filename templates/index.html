@@ -1,0 +1,73 @@
+{% load static %}
+{% load menu %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ meta_desc }}">
+    <meta name="keyword" content="{{ meta_key }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        {% nav_links %}
+    </header>
+    {% block main %}{% endblock %}
+    <footer>
+
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
+
+<script>
+
+
+    // List of Video Vendors embeds you want to support
+    var players = ['iframe[src*="youtube.com"]', 'iframe[src*="vimeo.com"]'];
+
+    // Select videos
+    var fitVids = document.querySelectorAll(players.join(","));
+
+    // If there are videos on the page...
+    if (fitVids.length) {
+        // Loop through videos
+        for (var i = 0; i < fitVids.length; i++) {
+            // Get Video Information
+            const fitVid = fitVids[i];
+            const width = fitVid.getAttribute("width");
+            const height = fitVid.getAttribute("height");
+            const aspectRatio = height / width;
+            const parentDiv = fitVid.parentNode;
+
+            // Wrap it in a DIV
+            const div = document.createElement("div");
+            div.className = "youtube-wrapper";
+            div.id = "player"
+            parentDiv.insertBefore(div, fitVid);
+            fitVid.remove();
+            div.appendChild(fitVid);
+
+            // Clear height/width from fitVid
+            fitVid.removeAttribute("height");
+            fitVid.removeAttribute("width");
+        }
+
+        const player = new Plyr(document.getElementById('player'));
+    }
+</script>
+
+</body>
+</html>

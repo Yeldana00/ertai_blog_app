@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Ертай Қуанышовтың блогы
+    {% if category %}
+        | {{ category.name }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="posts">
+
+        {% if posts.count == 0 %}
+            <p class="alert alert-success">Санатта посттар жоқ</p>
+        {% endif %}
+
+        <div class="posts__category_info">
+            {% if category %}
+                <h1 class="category_info__name">{{ category.name }}</h1>
+            {% endif %}
+        </div>
+
+        {% for post in posts %}
+            <div class="posts__item">
+                {% if post.thumbnail_image %}
+                    <img class="post-image" alt="" src="{{ post.thumbnail_image.url }}">
+                {% endif %}
+                <div class="post-info">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <div class="post-excerpt">
+                        <p>{{ post.excerpt_text | safe }}</p>
+                    </div>
+                    <a href="{% url 'post_detail' post_id=post.id slug=post.slug %}"
+                       class="post-read-btn">Толық оқу</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center">
+        <div class="btn-group ">
+            {% if page_obj.has_previous %}
+                <a class="btn btn-primary btn-lg" href="?page={{ page_obj.previous_page_number }}">Артқа</a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-primary btn-lg" href="?page={{ page_obj.next_page_number }}">Тағы жүктеу</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

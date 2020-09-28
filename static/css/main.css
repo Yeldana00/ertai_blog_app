@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,600&display=swap&subset=cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,900&display=swap&subset=cyrillic,cyrillic-ext);
+
+body, html {
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    background-color: #fff;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: top;
+    font-family: Ubuntu, sans-serif
+}
+
+img {
+    max-width: 100%;
+    height: auto
+}
+
+p {
+    font-size: inherit
+}
+
+address, caption, li, p, table {
+    line-height: 1.7;
+    color: inherit
+}
+
+a {
+    color: #06f;
+    font: inherit;
+    line-height: inherit;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    text-decoration: none
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+header .navbar {
+    padding: 10px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header .navbar .navbar-nav li a {
+    color: #333;
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 20px;
+    font-family: Ubuntu, sans-serif
+}
+
+header .navbar .navbar-nav li .active {
+    color: #06f
+}
+
+.middle {
+    margin-top: 30px
+}
+
+.post_detail {
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.posts__item {
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 0 7px rgba(3, 3, 3, 0.08);
+}
+
+.posts .posts__item .post-info {
+    padding: 20px;
+}
+
+.posts__category_info {
+    background-color: rgba(3, 3, 3, 0.01);
+    padding: 10px;
+}
+
+
+.posts .post-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -.8px;
+}
+
+.posts .post .post-info .post-excerpt {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.post-read-btn {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.category_info__name {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.page p {
+    font-size: 18px
+}
+
+.post {
+    max-width: 840px;
+    margin: 0 auto;
+    font-family: 'Merriweather', serif;
+}
+
+.post b {
+    font-weight: 800;
+}
+
+.recommended_posts {
+    margin-top: 30px;
+}
+
+.recommended_posts h3 {
+    margin-bottom: 15px;
+}
+
+.recommended_posts a {
+    text-decoration: underline;
+}
+
+.post-image {
+    width: 100%;
+}
+
+.youtube-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+}
+
+.youtube-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.post p {
+    font-size: 18px;
+    color: #000;
+    font-family: Merriweather, serif !important
+}
+
+.telegram {
+    margin-bottom: 30px
+}
+
+.telegram a {
+    width: 100%;
+    font-size: 28px;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.sidebar__banner {
+    margin-bottom: 30px;
+}
+
+.sidebar__banner img {
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(3, 3, 3, 0.1);
+}
+
+.banner__title {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.banner img {
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 7px rgba(0, 0, 0, .1)
+}
+
+.categories {
+    padding: 10px;
+    border-radius: 3px;
+    font-family: Ubuntu, sans-serif
+}
+
+.categories ul {
+    padding: 10px 10px 10px 20px
+}
+
+.categories ul li {
+    list-style: none;
+    margin-bottom: 5px
+}
+
+.categories ul li a {
+    font-size: 16px;
+    text-decoration: none
+}
+
+.categories .title h3 {
+    font-size: 20px
+}
+
+footer {
+    margin-top: 30px;
+    height: 5rem
+}
+
+@media (max-width: 991.98px) {
+    .middle-container, .navbar-container {
+        max-width: 100%
+    }
+
+    .navbar-container {
+        padding-left: 0
+    }
+}
