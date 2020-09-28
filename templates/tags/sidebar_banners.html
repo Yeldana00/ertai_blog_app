@@ -1,0 +1,10 @@
+{% for banner in banners %}
+    <div class="sidebar__banner">
+        {% if banner.type == 'image' %}
+            <h3 class="banner__title">{{ banner.name }}</h3>
+            <a href="{{ banner.url }}"><img src="{{ banner.image.url }}" alt=""></a>
+        {% else %}
+            {{ banner.code | safe }}
+        {% endif %}
+    </div>
+{% endfor %}

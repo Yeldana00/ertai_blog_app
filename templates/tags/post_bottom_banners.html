@@ -1,0 +1,9 @@
+{% for banner in banners %}
+    <div class="post__banners">
+        {% if banner.type == 'image' %}
+            <a href="{{ banner.url }}"><img src="{{ banner.image.url }}" alt=""></a>
+        {% else %}
+            {{ banner.code | safe }}
+        {% endif %}
+    </div>
+{% endfor %}

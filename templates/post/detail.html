@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% load banner %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block main %}
+    <div class="post_detail">
+        <div class="post">
+            <h1 style="margin-bottom: 30px">{{ post.title }}</h1>
+            {{ post.text | safe }}
+            {% if recommended_posts.count != 0 %}
+                <div class="recommended_posts">
+                    <h3>Басқа да, жазбаларды қараңыз</h3>
+                    {% for post in recommended_posts %}
+                        <p><a href="{% url 'post_detail' post_id=post.id slug=post.slug %}">{{ post.title }}</a></p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% post_bottom_banners %}
+        </div>
+    </div>
+{% endblock %}

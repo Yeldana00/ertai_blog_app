@@ -1,0 +1,26 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+    <a href="javascript:void(0)" class="navbar-toggler" data-toggle="collapse" data-target="#navbar"
+       aria-controls="navbar"
+       aria-expanded="false" aria-label="Toggle">
+        <img src="https://ertaikz.object.pscloud.io/static/menu.svg" alt="menu icon">
+    </a>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-container container">
+            <ul class="navbar-nav">
+                {% for link in links %}
+                    <li class="nav-item">
+
+                        {% if link.type == 'url' %}
+                            <a href="{{ link.url }}" class="navbar-link">{{ link.name }}</a>
+                        {% elif link.type == 'page' %}
+                            <a href="{% url 'page_detail' page_id=link.page.id slug=link.page.slug %}"
+                               class="navbar-link">{{ link.name }}</a>
+                        {% endif %}
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

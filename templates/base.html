@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load app %}
+{% load banner %}
+
+
+
+{% block meta_desc %}
+    Сайт жасау жоладары және интернет технологиялар туралы жазамын
+{% endblock %}
+
+{% block main %}
+    <main class="middle">
+        <div class="middle-container container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="sidebar">
+                        {% categories %}
+                        <div class="telegram">
+                            <a href="https://t.me/ertaikuanyshovdotcom" class="btn btn-primary btn-lg">Телеграмға
+                                жазылу</a>
+                        </div>
+                        {% sidebar_banners %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
